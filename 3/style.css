@@ -1,0 +1,138 @@
+body {
+    display: grid;
+    place-items: center;
+
+    padding: 0px;
+    margin: 0px;
+
+    width: 100vw;
+    height: 100vh;
+
+    
+}
+
+.container {
+    display: grid;
+    place-items: center;
+
+    background-color: #272C34;
+    width: 400px;
+    height: 400px;
+}
+
+.circle {
+    position: absolute;
+    background-color: #7DDFFC;
+    width: 150px;
+    height: 150px;
+
+    clip-path: circle();
+}
+
+.ground {
+    position: relative;
+    top: 110px;
+
+    background-color: #F0DE75;
+    width: 150px;
+    height: 75px;
+}
+
+.sideB {
+    position: absolute;
+    bottom: 40px;
+    
+    width: 150px;
+    height: 90px;
+    background-color: white;
+
+    clip-path: polygon(48% 41%, 61% 100%, 86% 100%);
+
+    animation: sideBShadow 4s cubic-bezier(.4,0,.49,1) infinite;
+}
+
+.sideA {
+    position: absolute;
+    bottom: 40px;
+
+    background-color: white;
+
+    width: 150px;
+    height: 90px;
+    clip-path: polygon(48% 41%, 61% 100%, 13% 100%);
+}
+
+.sun {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+
+    left: 49%;
+    bottom: 54%;
+
+    background-color: yellow;
+
+    border-radius: 50%;
+
+    animation: sunRotate 4s cubic-bezier(.4,0,.49,1) infinite;
+    transform-origin: 50% 400%;
+}
+
+.ground-shadow {
+    position: absolute;
+    background-color: black;
+    opacity: .5;
+
+    width: 175px;
+    height: 40px;
+
+
+
+    animation: groundShadow 4s cubic-bezier(.4,0,.49,1) infinite;
+}
+
+@keyframes groundShadow {
+    0% {
+        clip-path: polygon(100% 100%, 74% 0, 11% 0);
+        opacity: .5;
+    }
+    50% {
+        opacity: .25
+    }
+    100% {
+        clip-path: polygon(0 100%, 74% 0, 11% 0);
+        opacity: .5;
+    }
+}
+
+@keyframes sunRotate {
+    0% {
+        transform: rotate(-90deg);
+    }
+    100% {
+        transform: rotate(60deg);
+    }
+}
+
+@keyframes sideBShadow {
+    0% {
+        background-color: #b3b3b3;
+        
+    }
+    30% {
+        background-color: #b3b3b3;
+    }
+    60% {
+        background-color: #e0e0e0;
+    }
+    65% {
+        background-color: rgb(240, 240, 240);
+    }
+    80% {
+        background-color: white;
+    }
+    90% {
+        background-color: white;
+    }
+}
+
